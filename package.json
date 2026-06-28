@@ -1,0 +1,33 @@
+{
+  "name": "orangehrm-cypress-typescript-e2e",
+  "version": "1.0.0",
+  "description": "End-to-end Cypress TypeScript automation project for the OrangeHRM demo application.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:chrome": "cypress run --browser chrome",
+    "test:allure": "cypress run --env allure=true",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "ci": "npm run lint && npm run format:check && npm run test:allure"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.5",
+    "allure-commandline": "^2.32.0",
+    "allure-cypress": "^3.0.6",
+    "cypress": "^13.17.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  }
+}
