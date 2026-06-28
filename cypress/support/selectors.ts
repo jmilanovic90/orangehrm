@@ -26,8 +26,15 @@ export const selectors = {
     confirmDeleteButton: 'button.oxd-button--label-danger',
     dropdownAutoComplete: '.oxd-autocomplete-dropdown'
   },
+  myInfo: {
+    description: 'textarea[placeholder="Type comment here"]',
+    downloadButton: '.oxd-icon.bi-download',
+    deleteButton: '.oxd-icon.bi-trash',
+    confirmDeleteButton: 'button.oxd-button--label-danger'
+  },
   common: {
     input: '.oxd-input-group',
-    tableRow: '.oxd-table-row'
+    tableRow: '.oxd-table-row',
+    fileInput: 'input[type="file"]'
   }
 } as const;

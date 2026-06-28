@@ -10,7 +10,7 @@ describe('User Management Flow', () => {
   const dashboardPage = new DashboardPage();
   const userManagementPage = new UserManagementPage();
 
-  it.only('should create, edit and delete user', () => {
+  it('should create, edit and delete user', () => {
     const newUser = createUser();
 
     step('Navigate to User Management', () => {

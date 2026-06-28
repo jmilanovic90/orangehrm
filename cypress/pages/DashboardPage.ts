@@ -9,4 +9,8 @@ export class DashboardPage {
   openUserManagement(): void {
     cy.contains('a', 'Admin').click();
   }
+
+  openMyInfo(): void {
+    cy.contains('a', 'My Info').click();
+  }
 }
