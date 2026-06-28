@@ -7,6 +7,7 @@ const env = {
 };
 
 export default defineConfig({
+  projectId: '6j111b',
   e2e: {
     baseUrl: process.env.CYPRESS_BASE_URL ?? 'https://opensource-demo.orangehrmlive.com',
     specPattern: 'cypress/e2e/**/*.cy.ts',

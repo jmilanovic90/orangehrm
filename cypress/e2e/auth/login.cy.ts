@@ -1,19 +1,18 @@
-import { DashboardPage } from '../../pages/DashboardPage';
 import { LoginPage } from '../../pages/LoginPage';
 import { getRequiredEnv } from '../../support/env';
 
 describe('Authentication', () => {
   const loginPage = new LoginPage();
-  const dashboardPage = new DashboardPage();
 
   beforeEach(() => {
     loginPage.visit();
   });
 
-  it('logs in with valid credentials and reaches the dashboard', () => {
+  it.only('logs in with valid credentials and reaches the dashboard', () => {
     loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
 
-    dashboardPage.assertLoaded();
+    cy.url().should('include', '/dashboard/index');
+    cy.get('h6').contains('Dashboard').should('be.visible');
   });
 
   it('shows an error for invalid credentials', () => {
@@ -22,5 +21,12 @@ describe('Authentication', () => {
     });
 
     loginPage.assertValidationMessage('Invalid credentials');
+  });
+
+  it.only('shows an error for empty credentials', () => {
+    loginPage.clickSubmit();
+
+    loginPage.getRequiredMessage('username').should('contain.text', 'Required');
+    loginPage.getRequiredMessage('password').should('contain.text', 'Required');
   });
 });
