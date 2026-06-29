@@ -11,20 +11,19 @@ describe('Dashboard', () => {
 
   beforeEach(() => {
     loginPage.visit();
-        loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
-            sideNavigation.openDashboard();
+    loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
+    sideNavigation.openDashboard();
   });
 
   it('shows all necessary widgets', () => {
-      dashboardWidgets.forEach(widgetName => {
-    dashboardPage.getWidgetByName(widgetName)
-      .should('be.visible');
-  });
+    dashboardWidgets.forEach((widgetName) => {
+      dashboardPage.getWidgetByName(widgetName).should('be.visible');
     });
+  });
 
-  it.only('doesn\'t show invalid labels', () => {
-    invalidDashboardLabels.forEach(label => {
+  it.only("doesn't show invalid labels", () => {
+    invalidDashboardLabels.forEach((label) => {
       cy.contains(label).should('not.exist');
     });
   });
-  });
+});

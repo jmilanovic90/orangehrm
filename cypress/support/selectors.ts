@@ -33,6 +33,16 @@ export const selectors = {
     deleteButton: '.oxd-icon.bi-trash',
     confirmDeleteButton: 'button.oxd-button--label-danger'
   },
+  recruitment: {
+    jobTitleDropdown: '.oxd-grid-item:nth-child(1) .oxd-select-text',
+    vacancyDropdown: '.oxd-grid-item:nth-child(2) .oxd-select-text',
+    hiringManagerDropdown: '.oxd-grid-item:nth-child(3) .oxd-select-text',
+    statusDropdown: '.oxd-grid-item:nth-child(4) .oxd-select-text',
+    dropdownOption: '.oxd-select-option',
+    searchButton: 'button[type="submit"]',
+    resultRows: '.oxd-table-card',
+    resetButton: 'button[type="button"].oxd-button--ghost'
+  },
   common: {
     input: '.oxd-input-group',
     tableRow: '.oxd-table-row',

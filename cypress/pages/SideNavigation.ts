@@ -10,4 +10,8 @@ export class SideNavigation {
   openDashboard(): void {
     cy.contains('a', 'Dashboard').click();
   }
+
+  openRecruitment(): void {
+    cy.contains('a', 'Recruitment').click();
+  }
 }

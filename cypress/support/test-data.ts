@@ -21,3 +21,10 @@ export const dashboardWidgets = [
 ];
 
 export const invalidDashboardLabels = ['Invalid Department', 'Mars Office'];
+
+export const vacancyFilters = {
+  jobTitle: 'Payroll Administrator',
+  hiringManager: 'mandaa user',
+  vacancy: 'Payroll Administrator',
+  statuses: ['Active', 'Closed']
+};
