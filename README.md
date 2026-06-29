@@ -48,6 +48,9 @@ Create a local Cypress environment file if you want to run tests from your machi
   "username": "Admin",
   "password": "********"
 }
+
+Secrets are used for running in Github Actions: ORANGEHRM_USERNAME and ORANGEHRM_PASSWORD
+
 ```
 
 Save it as `cypress.env.json`. This file is ignored by Git so credentials are not committed.
