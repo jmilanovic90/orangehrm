@@ -29,17 +29,16 @@ export default defineConfig({
         resultsDir: 'allure-results'
       });
       on('task', {
-    deleteDownloads() {
-      const downloadsFolder = path.resolve('cypress', 'downloads');
+        deleteDownloads() {
+          const downloadsFolder = path.resolve('cypress', 'downloads');
 
-      if (fs.existsSync(downloadsFolder)) {
-        fs.rmSync(downloadsFolder, { recursive: true, force: true });
-      }
+          if (fs.existsSync(downloadsFolder)) {
+            fs.rmSync(downloadsFolder, { recursive: true, force: true });
+          }
 
-      return null;
-    },
-  });
-
+          return null;
+        }
+      });
 
       return config;
     }

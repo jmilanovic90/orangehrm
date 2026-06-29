@@ -10,7 +10,7 @@ describe('Authentication', () => {
   });
 
   it('shows an error for invalid credentials', () => {
-          loginPage.login(invalidUser.username, invalidUser.password);
+    loginPage.login(invalidUser.username, invalidUser.password);
 
     loginPage.assertValidationMessage('Invalid credentials');
   });
@@ -22,7 +22,7 @@ describe('Authentication', () => {
     loginPage.getRequiredMessage('password').should('contain.text', 'Required');
   });
 
-    it('logs in with valid credentials and reaches the dashboard', () => {
+  it('logs in with valid credentials and reaches the dashboard', () => {
     loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
 
     cy.url().should('include', '/dashboard/index');

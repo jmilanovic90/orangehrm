@@ -14,7 +14,7 @@ describe('My Info - Attachments', () => {
   const description = 'Test attachment description';
 
   it('should attach, verify and delete attachments', () => {
-    step('Navigate to My Info', async  () => {
+    step('Navigate to My Info', async () => {
       loginPage.visit();
       loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
 

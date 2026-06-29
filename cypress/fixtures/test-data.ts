@@ -10,12 +10,10 @@ export function createUser() {
   };
 }
 
-  export const invalidUser = 
-    {
-      username: 'invalid-user',
-      password: 'invalid-password'
-    }
-  
+export const invalidUser = {
+  username: 'invalid-user',
+  password: 'invalid-password'
+};
 
 export const dashboardWidgets = [
   'Employee Distribution by Sub Unit',
