@@ -6,11 +6,7 @@ export class DashboardPage {
     cy.get(selectors.dashboard.userDropdownMenu).contains('Logout').click();
   }
 
-  openUserManagement(): void {
-    cy.contains('a', 'Admin').click();
-  }
-
-  openMyInfo(): void {
-    cy.contains('a', 'My Info').click();
+    getWidgetByName(widgetName: string) {
+    return cy.contains(selectors.dashboard.dashboardWidget, widgetName);
   }
 }

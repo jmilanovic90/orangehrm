@@ -1,13 +1,13 @@
 import { step } from '../../support/step';
 import { LoginPage } from '../../pages/LoginPage';
-import { DashboardPage } from '../../pages/DashboardPage';
+import { SideNavigation } from '../../pages/SideNavigation';
 import { UserManagementPage } from '../../pages/UserManagementPage';
 import { getRequiredEnv } from '../../support/env';
 import { createUser } from '../../support/test-data';
 
 describe('User Management Flow', () => {
   const loginPage = new LoginPage();
-  const dashboardPage = new DashboardPage();
+  const sideNav = new SideNavigation();
   const userManagementPage = new UserManagementPage();
 
   it('should create, edit and delete user', () => {
@@ -18,7 +18,7 @@ describe('User Management Flow', () => {
       loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
 
       cy.url().should('include', '/dashboard/index');
-      dashboardPage.openUserManagement();
+      sideNav.openUserManagement();
       cy.url().should('include', '/admin/viewSystemUsers');
     });
 

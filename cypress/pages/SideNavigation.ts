@@ -1,19 +1,13 @@
-import { selectors } from '../support/selectors';
-
 export class SideNavigation {
-  assertVisible(): void {
-    cy.get(selectors.sideNav.container).should('be.visible');
+  openUserManagement(): void {
+    cy.contains('a', 'Admin').click();
   }
 
-  search(menuItem: string): void {
-    cy.get(selectors.sideNav.searchInput).clear().type(menuItem);
+  openMyInfo(): void {
+    cy.contains('a', 'My Info').click();
   }
 
-  open(menuItem: string): void {
-    cy.get(selectors.sideNav.menuItem).contains(menuItem).click();
-  }
-
-  assertMenuItemVisible(menuItem: string): void {
-    cy.get(selectors.sideNav.menuItem).contains(menuItem).should('be.visible');
+  openDashboard(): void {
+    cy.contains('a', 'Dashboard').click();
   }
 }

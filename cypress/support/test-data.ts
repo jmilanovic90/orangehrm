@@ -9,3 +9,15 @@ export function createUser() {
     status: 'Enabled'
   };
 }
+
+export const dashboardWidgets = [
+  'Employee Distribution by Sub Unit',
+  'Employee Distribution by Location',
+  'Employees on Leave Today',
+  'Time At Work',
+  'Quick Launch',
+  'Buzz Latest Posts',
+  'My Actions'
+];
+
+export const invalidDashboardLabels = ['Invalid Department', 'Mars Office'];

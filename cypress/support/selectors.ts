@@ -10,7 +10,8 @@ export const selectors = {
     header: '.oxd-topbar-header-breadcrumb h6',
     userDropdown: '.oxd-userdropdown-tab',
     userDropdownMenu: '.oxd-dropdown-menu',
-    logoutLink: 'a:contains("Logout")'
+    logoutLink: 'a:contains("Logout")',
+    dashboardWidget: '.orangehrm-dashboard-widget'
   },
   sideNav: {
     container: '.oxd-sidepanel',

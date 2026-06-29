@@ -2,25 +2,24 @@ import { step } from '../../support/step';
 import { LoginPage } from '../../pages/LoginPage';
 import { getRequiredEnv } from '../../support/env';
 import { MyInfoPage } from '../../pages/MyInfoPage';
-import { DashboardPage } from '../../pages/DashboardPage';
+import { SideNavigation } from '../../pages/SideNavigation';
 import { Utils } from '../../support/utils';
 
 describe('My Info - Attachments', () => {
   const loginPage = new LoginPage();
   const myInfoPage = new MyInfoPage();
-  const dashboardPage = new DashboardPage();
+  const sideNav = new SideNavigation();
   const utils = new Utils();
+  const fileName = 'attachment-test.png';
+  const description = 'Test attachment description';
 
   it.only('should attach, verify and delete attachments', () => {
-    const fileName = 'attachment-test.png';
-    const description = 'Test attachment description';
-
     step('Navigate to My Info', () => {
       loginPage.visit();
       loginPage.login(getRequiredEnv('username'), getRequiredEnv('password'));
 
       cy.url().should('include', '/dashboard/index');
-      dashboardPage.openMyInfo();
+      sideNav.openMyInfo();
       cy.url().should('include', 'viewPersonalDetails');
     });
 
@@ -54,7 +53,7 @@ describe('My Info - Attachments', () => {
         myInfoPage.clickDeleteButton();
       });
       myInfoPage.clickConfirmDeleteButton();
-      cy.contains('.oxd-table-card', fileName).should('not.exist');
+      cy.contains(fileName).should('not.exist');
     });
   });
 });
