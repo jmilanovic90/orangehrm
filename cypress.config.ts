@@ -1,5 +1,7 @@
 import { defineConfig } from 'cypress';
 import { allureCypress } from 'allure-cypress/reporter';
+import fs from 'fs';
+import path from 'path';
 
 const env = {
   ...(process.env.ORANGEHRM_USERNAME ? { username: process.env.ORANGEHRM_USERNAME } : {}),
@@ -26,6 +28,18 @@ export default defineConfig({
       allureCypress(on, config, {
         resultsDir: 'allure-results'
       });
+      on('task', {
+    deleteDownloads() {
+      const downloadsFolder = path.resolve('cypress', 'downloads');
+
+      if (fs.existsSync(downloadsFolder)) {
+        fs.rmSync(downloadsFolder, { recursive: true, force: true });
+      }
+
+      return null;
+    },
+  });
+
 
       return config;
     }

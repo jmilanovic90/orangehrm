@@ -1,7 +1,7 @@
 import { LoginPage } from '../../pages/LoginPage';
 import { getRequiredEnv } from '../../support/env';
 import { SideNavigation } from '../../pages/SideNavigation';
-import { dashboardWidgets, invalidDashboardLabels } from '../../support/test-data';
+import { dashboardWidgets, invalidDashboardLabels } from '../../fixtures/test-data';
 import { DashboardPage } from '../../pages/DashboardPage';
 
 describe('Dashboard', () => {
@@ -21,7 +21,7 @@ describe('Dashboard', () => {
     });
   });
 
-  it.only("doesn't show invalid labels", () => {
+  it("doesn't show invalid labels", () => {
     invalidDashboardLabels.forEach((label) => {
       cy.contains(label).should('not.exist');
     });

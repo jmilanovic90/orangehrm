@@ -10,11 +10,18 @@ export function createUser() {
   };
 }
 
+  export const invalidUser = 
+    {
+      username: 'invalid-user',
+      password: 'invalid-password'
+    }
+  
+
 export const dashboardWidgets = [
   'Employee Distribution by Sub Unit',
   'Employee Distribution by Location',
   'Employees on Leave Today',
-  'Time At Work',
+  'Time at Work',
   'Quick Launch',
   'Buzz Latest Posts',
   'My Actions'
@@ -23,8 +30,8 @@ export const dashboardWidgets = [
 export const invalidDashboardLabels = ['Invalid Department', 'Mars Office'];
 
 export const vacancyFilters = {
-  jobTitle: 'Payroll Administrator',
-  hiringManager: 'mandaa user',
-  vacancy: 'Payroll Administrator',
+  jobTitle: 'Software Engineer',
+  hiringManager: 'Rahul Das',
+  vacancy: 'test search',
   statuses: ['Active', 'Closed']
 };

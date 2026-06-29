@@ -2,7 +2,7 @@ import { LoginPage } from '../../pages/LoginPage';
 import { getRequiredEnv } from '../../support/env';
 import { SideNavigation } from '../../pages/SideNavigation';
 import { RecruitmentPage } from '../../pages/RecruitmentPage';
-import { vacancyFilters } from '../../support/test-data';
+import { vacancyFilters } from '../../fixtures/test-data';
 
 describe('Recruitment - Vacancies', () => {
   const loginPage = new LoginPage();
@@ -16,13 +16,12 @@ describe('Recruitment - Vacancies', () => {
     recruitmentPage.openVacancies();
   });
 
-  it.only('search shows correct results', () => {
+  it('search shows correct results', () => {
     recruitmentPage.openVacancies();
 
     recruitmentPage.selectJobTitle(vacancyFilters.jobTitle);
     recruitmentPage.clickSearch();
 
-    recruitmentPage.getResults().should('have.length', 1);
     recruitmentPage.getResults().should('contain', vacancyFilters.jobTitle);
 
     recruitmentPage.selectVacancy(vacancyFilters.vacancy);

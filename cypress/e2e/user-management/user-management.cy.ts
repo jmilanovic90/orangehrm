@@ -3,7 +3,7 @@ import { LoginPage } from '../../pages/LoginPage';
 import { SideNavigation } from '../../pages/SideNavigation';
 import { UserManagementPage } from '../../pages/UserManagementPage';
 import { getRequiredEnv } from '../../support/env';
-import { createUser } from '../../support/test-data';
+import { createUser } from '../../fixtures/test-data';
 
 describe('User Management Flow', () => {
   const loginPage = new LoginPage();
