@@ -46,28 +46,11 @@ Create a local Cypress environment file if you want to run tests from your machi
 ```json
 {
   "username": "Admin",
-  "password": "admin123"
+  "password": "********"
 }
 ```
 
 Save it as `cypress.env.json`. This file is ignored by Git so credentials are not committed.
-
-You can also provide credentials with environment variables:
-
-```bash
-CYPRESS_BASE_URL=https://opensource-demo.orangehrmlive.com
-ORANGEHRM_USERNAME=Admin
-ORANGEHRM_PASSWORD=admin123
-```
-
-For GitHub Actions, add these repository secrets:
-
-- `ORANGEHRM_USERNAME`
-- `ORANGEHRM_PASSWORD`
-
-Optionally add this repository variable:
-
-- `CYPRESS_BASE_URL`
 
 ## Run Tests
 
